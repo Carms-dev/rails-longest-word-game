@@ -4,7 +4,7 @@ require 'open-uri'
 class GamesController < ApplicationController
   def new
     session[:user_score] = 0 if session[:user_score].nil?
-    @alphabets = (0..10).map { ('A'..'Z').to_a[rand(26)] }
+    @alphabets = (0...10).map { ('A'..'Z').to_a[rand(26)] }
   end
 
   def score

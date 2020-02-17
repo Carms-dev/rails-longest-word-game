@@ -4,6 +4,11 @@
   <p>Cumulated Score: <%= session[:user_score] %></p>
 </div>
 
+<div>
+  <form action="/reset" method="get">
+    <input type="submit" value="Reset">
+  </form>
+</div>
 
 <div class="boxes">
   <% @alphabets.each do |a|%>
@@ -20,8 +25,4 @@
   <input type="submit" value="play">
 </form>
 
-<div>
-  <form action="/reset" method="get">
-    <input type="submit" value="Reset">
-  </form>
-</div>
+
