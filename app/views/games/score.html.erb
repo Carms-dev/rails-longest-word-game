@@ -1,0 +1,23 @@
+<h1>Result</h1>
+
+<div>
+  <p>Cumulated Score: <%= session[:user_score] %></p>
+  <p>Score: <%= @score %></p>
+</div>
+
+<% if @letter_check == false %>
+  <p>Sorry but <%= @word %> can't be built out of <%= @alpha.join(', ') %></p>
+<% elsif @word_check == false %>
+  <p>Sorry but <%= @word %> does not seem to be a valid English word...</p>
+<% else %>
+  <p>Congrats! <%= @word %>  is a valid English word!</p>
+<% end %>
+
+
+<%= link_to "Play again", new_path %>
+
+<div>
+  <form action="/reset" method="get">
+    <input type="submit" value="Reset">
+  </form>
+</div>
